@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./styles.css">
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <nav>
+        <h1>Message Details</h1>
+    </nav>
+
+    <p><strong>Author:</strong>
+        <%= message.user %>
+    </p>
+    <p><strong>Message:</strong>
+        <%= message.text %>
+    </p>
+    <p><strong>Added:</strong>
+        <%= message.added.toLocaleString() %>
+    </p>
+
+    <a href="/">Back to messages</a>
+</body>
+
+</html>
