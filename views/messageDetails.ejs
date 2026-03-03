@@ -8,8 +8,12 @@
 </head>
 
 <body>
-    <nav>
+    <nav class="navBar">
         <h1>Message Details</h1>
+        <div>
+            <a href="/"><button type="button">Messages</button></a>
+            <a href="/new"><button type="button">Add a new message</button></a>
+        </div>
     </nav>
 
     <p><strong>Author:</strong>
@@ -22,7 +26,7 @@
         <%= message.added.toLocaleString() %>
     </p>
 
-    <a href="/">Back to messages</a>
+
 </body>
 
 </html>

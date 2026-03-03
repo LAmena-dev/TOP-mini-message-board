@@ -2,33 +2,50 @@
 
 <head>
     <link rel="stylesheet" href="./styles.css">
+    <script src="./scripts.js" defer></script>
     <title>
         <%= title %>
     </title>
 </head>
 
 <body>
-    <nav>
+    <nav class="navBar">
         <h1>
             <%= title %>
         </h1>
+        <div>
+            <a href="/"><button type="button" disabled>Messages</button></a>
+            <a href="/new"><button type="button">Add a new message</button></a>
+        </div>
     </nav>
 
-    <ul>
-        <% messages.forEach((message)=> { %>
-            <li>
-                <strong>
-                    <%= message.user %>:
-                </strong>
-                <%= message.text %>
-                    <em>(<%= message.added.toLocaleString() %>)</em>
+    <div>
+        <ul>
+            <% messages.forEach((message)=> { %>
+                <li>
+                    <strong>
+                        <%= message.user %>:
+                    </strong>
+                    <%= message.text %>
+                        <em>(<%= message.added.toLocaleString() %>)</em>
 
-                    <a href="/messages/<%= message.id %>">Open</a>
-            </li>
-            <% }); %>
-    </ul>
+                        <button class="msgDetails" type="button" data-user="<%= message.user %>"
+                            data-text="<%= message.text %>"
+                            data-added="<%= message.added.toLocaleString() %>">Open</button>
+                </li>
+                <% }); %>
+        </ul>
+    </div>
 
-    <a href="/new">Add a new message</a>
+    <dialog id="msgModal">
+        <div>
+            <p><strong>Author:</strong> <span id="modalUser"></span></p>
+            <p><strong>Message:</strong> <span id="modalText"></span></p>
+            <p><strong>Added:</strong> <span id="modalAdded"></span></p>
+            <button id="closeModal">Close</button>
+        </div>
+    </dialog>
+
 </body>
 
 </html>

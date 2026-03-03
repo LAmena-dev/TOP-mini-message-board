@@ -8,9 +8,15 @@
 </head>
 
 <body>
-    <h1>
-        <%= title %>
-    </h1>
+    <nav class="navBar">
+        <h1>
+            <%= title %>
+        </h1>
+        <div>
+            <a href="/"><button type="button">Messages</button></a>
+            <a href="/new"><button type="button" disabled>Add a new message</button></a>
+        </div>
+    </nav>
 
     <form method="POST" action="/new">
         <label for="user">Name:</label>
@@ -21,8 +27,6 @@
 
         <button type="submit">Post Message</button>
     </form>
-
-    <a href="/">Back to Messages</a>
 </body>
 
 </html>
