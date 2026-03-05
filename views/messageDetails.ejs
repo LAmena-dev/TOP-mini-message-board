@@ -37,7 +37,13 @@
                         <strong>Added:</strong>
                         <%= message.added.toLocaleString() %>
                     </em>
-                    <a href="/"><button type="button" class="msgBtn back">Back</button></a>
+                    <form method="POST" action="/messages/<%= message.id %>/delete"
+                        onsubmit="return confirm('Are you sure you want to delete this message?');">
+                        <div class="formBtns">
+                            <button type="submit" class="msgBtn">Delete Message</button>
+                            <a href="/"><button type="button" class="msgBtn back">Back</button></a>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

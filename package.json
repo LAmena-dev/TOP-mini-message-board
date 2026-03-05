@@ -5,7 +5,9 @@
   "description": "A TOP practice repository using Express and EJS",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm install",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",

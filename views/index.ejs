@@ -24,22 +24,37 @@
                 <h2>Messages</h2>
             </div>
             <ul>
-                <% messages.forEach((message)=> { %>
-                    <li class="msgBody">
-                        <p class="msgTop">
+                <% if (messages.length===0) { %>
+                    <li class="msgBody emptyState">
+                        <div class="msgTop">
+                            <p class="emptyText">No messages yet.</p>
                             <strong>
-                                <%= message.user %>:
+                                <p class="emptyText">Be the first to Post!</p>
                             </strong>
-                        <p class="text">
-                            <%= message.text %>
-                        </p>
-                        </p>
-                        <div class="msgBot">
-                            <em>(<%= message.added.toLocaleString() %>)</em>
-                            <a href="/messages/<%= message.id %>"><button type="button" class="msgBtn">Open</button></a>
                         </div>
+                        <a href="/new">
+                            <button type="button" class="msgBtn postBtn">Create the first message</button>
+                        </a>
                     </li>
-                    <% }); %>
+                    <% } else { %>
+                        <% messages.forEach((message)=> { %>
+                            <li class="msgBody">
+                                <p class="msgTop">
+                                    <strong>
+                                        <%= message.user %>:
+                                    </strong>
+                                <p class="text">
+                                    <%= message.text %>
+                                </p>
+                                </p>
+                                <div class="msgBot">
+                                    <em>(<%= message.added.toLocaleString() %>)</em>
+                                    <a href="/messages/<%= message.id %>"><button type="button"
+                                            class="msgBtn">Open</button></a>
+                                </div>
+                            </li>
+                            <% }); %>
+                                <% } %>
             </ul>
         </div>
     </main>

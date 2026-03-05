@@ -54,4 +54,16 @@ indexRouter.get("/messages/:id", (req, res) => {
   res.render("messageDetails", { title: "Message Details", message });
 });
 
+indexRouter.post("/messages/:id/delete", (req, res) => {
+  const id = parseInt(req.params.id);
+  const index = messages.findIndex((msg) => msg.id === id);
+
+  if (index === -1) {
+    return res.statusCode(404).send("Message not found!");
+  }
+  messages.splice(index, 1);
+
+  res.redirect("/");
+});
+
 export default indexRouter;

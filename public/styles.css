@@ -120,7 +120,7 @@ em {
   display: flex;
   flex: 0;
   justify-content: space-between;
-  align-items: end;
+  align-items: center;
   border-top: 1px solid black;
 }
 
@@ -128,7 +128,11 @@ em {
   font-weight: bold;
   padding: 8px 48px;
   margin-top: 16px;
+}
+
+.postBtn {
   flex: 1;
+  width: 100%;
 }
 
 label {
@@ -162,9 +166,25 @@ form {
 
 .formBtns {
   display: flex;
+  justify-content: end;
   gap: 50px;
 }
 
 .back {
   padding: 8px 80px;
+}
+
+.emptyState {
+  text-align: center;
+}
+
+.emptyText {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2rem;
+  margin: 8px;
+}
+
+.emptyState a {
+  display: block;
+  width: 100%;
 }
