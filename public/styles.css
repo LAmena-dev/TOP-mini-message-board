@@ -1,0 +1,170 @@
+* {
+  font-family: "Lucida Sans", Arial, sans-serif;
+}
+
+body,
+html {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  border-bottom: 8px solid black;
+}
+
+nav > div {
+  display: flex;
+  gap: 24px;
+}
+
+.siteTitle {
+  text-decoration: none;
+  color: white;
+  background-color: hsla(0, 0%, 0%, 1);
+  border-radius: 25px;
+  padding: 4px 24px;
+  margin: 4px 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  flex-grow: 1;
+  background-color: gray;
+  padding: 36px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border: 8px solid black;
+  box-shadow: 8px 16px hsla(0, 0%, 0%, 0.75);
+  width: 100%;
+}
+
+.containerHead {
+  display: flex;
+  justify-content: center;
+  border-bottom: 8px solid black;
+  padding: 0 36px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.msgBody {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 16px 36px;
+  flex: 1;
+}
+
+li:not(:last-child) {
+  border-bottom: 2px solid black;
+}
+
+button {
+  cursor: pointer;
+  font-size: clamp(8px, 1rem, 3rem);
+  padding: 16px 24px;
+}
+
+h1 {
+  font-size: 2.25rem;
+  margin: 16px 0;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 16px 0;
+}
+
+.msgTop {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  font-size: 1.25rem;
+  margin: 8px 0;
+}
+
+.text {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.25rem;
+  margin: 0 24px;
+}
+
+em {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.msgBot {
+  display: flex;
+  flex: 0;
+  justify-content: space-between;
+  align-items: end;
+  border-top: 1px solid black;
+}
+
+.msgBtn {
+  font-weight: bold;
+  padding: 8px 48px;
+  margin-top: 16px;
+  flex: 1;
+}
+
+label {
+  font-size: 1.25rem;
+}
+
+input,
+textarea {
+  font-size: 1rem;
+  margin: 16px 0;
+}
+
+textarea {
+  flex: 1;
+}
+
+input {
+  font-weight: bold;
+  height: 2rem;
+}
+
+.msgDeats {
+  flex: 1;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.formBtns {
+  display: flex;
+  gap: 50px;
+}
+
+.back {
+  padding: 8px 80px;
+}

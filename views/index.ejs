@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <title>
         <%= title %>
     </title>
@@ -9,26 +9,40 @@
 
 <body>
     <nav>
-        <h1>
-            <%= title %>
-        </h1>
+        <a class="siteTitle" href="/">
+            <h1>Mini Messageboard</h1>
+        </a>
+        <div>
+            <a href="/"><button type="button" disabled style="cursor: not-allowed;">Messages</button></a>
+            <a href="/new"><button type="button">Add a new message</button></a>
+        </div>
     </nav>
 
-    <ul>
-        <% messages.forEach((message)=> { %>
-            <li>
-                <strong>
-                    <%= message.user %>:
-                </strong>
-                <%= message.text %>
-                    <em>(<%= message.added.toLocaleString() %>)</em>
-
-                    <a href="/messages/<%= message.id %>">Open</a>
-            </li>
-            <% }); %>
-    </ul>
-
-    <a href="/new">Add a new message</a>
+    <main>
+        <div class="container">
+            <div class="containerHead">
+                <h2>Messages</h2>
+            </div>
+            <ul>
+                <% messages.forEach((message)=> { %>
+                    <li class="msgBody">
+                        <p class="msgTop">
+                            <strong>
+                                <%= message.user %>:
+                            </strong>
+                        <p class="text">
+                            <%= message.text %>
+                        </p>
+                        </p>
+                        <div class="msgBot">
+                            <em>(<%= message.added.toLocaleString() %>)</em>
+                            <a href="/messages/<%= message.id %>"><button type="button" class="msgBtn">Open</button></a>
+                        </div>
+                    </li>
+                    <% }); %>
+            </ul>
+        </div>
+    </main>
 </body>
 
 </html>

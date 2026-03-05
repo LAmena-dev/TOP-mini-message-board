@@ -1,28 +1,40 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <title>
         <%= title %>
     </title>
 </head>
 
 <body>
-    <h1>
-        <%= title %>
-    </h1>
+    <nav>
+        <a class="siteTitle" href="/">
+            <h1>Mini Messageboard</h1>
+        </a>
+        <div class="buttons">
+            <a href="/"><button type="button">Messages</button></a>
+            <a href="/new"><button type="button" disabled style="cursor: not-allowed;">Add a new message</button></a>
+        </div>
+    </nav>
 
-    <form method="POST" action="/new">
-        <label for="user">Name:</label>
-        <input type="text" id="user" name="msgUser" required><br><br>
-
-        <label for="text">Message:</label>
-        <textarea id="text" name="msgText" required></textarea><br><br>
-
-        <button type="submit">Post Message</button>
-    </form>
-
-    <a href="/">Back to Messages</a>
+    <main>
+        <div class="container msgDeats">
+            <div class="containerHead">
+                <h2>Add a new Message</h2>
+            </div>
+            <form class="msgBody" method="POST" action="/new">
+                <strong><label for="user">Name:</label></strong>
+                <input type="text" id="user" name="msgUser" required><br><br>
+                <strong><label for="text">Message:</label></strong>
+                <textarea id="text" name="msgText" required></textarea><br><br>
+                <div class="formBtns">
+                    <button type="submit" class="msgBtn">Post Message</button>
+                    <a href="/"><button type="button" class="msgBtn back">Back</button></a>
+                </div>
+            </form>
+        </div>
+    </main>
 </body>
 
 </html>

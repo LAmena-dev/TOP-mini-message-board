@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <title>
         <%= title %>
     </title>
@@ -9,20 +9,39 @@
 
 <body>
     <nav>
-        <h1>Message Details</h1>
+        <a class="siteTitle" href="/">
+            <h1>Mini Messageboard</h1>
+        </a>
+        <div>
+            <a href="/"><button type="button">Messages</button></a>
+            <a href="/new"><button type="button">Add a new message</button></a>
+        </div>
     </nav>
 
-    <p><strong>Author:</strong>
-        <%= message.user %>
-    </p>
-    <p><strong>Message:</strong>
-        <%= message.text %>
-    </p>
-    <p><strong>Added:</strong>
-        <%= message.added.toLocaleString() %>
-    </p>
-
-    <a href="/">Back to messages</a>
+    <main>
+        <div class="container msgDeats">
+            <div class="containerHead">
+                <h2>Message Details</h2>
+            </div>
+            <div class="msgBody">
+                <div class="msgTop">
+                    <p><strong>Author:</strong>
+                        <%= message.user %>
+                    </p>
+                    <p class="text"><strong>Message:</strong>
+                        <%= message.text %>
+                    </p>
+                </div>
+                <div class="msgBot">
+                    <em>
+                        <strong>Added:</strong>
+                        <%= message.added.toLocaleString() %>
+                    </em>
+                    <a href="/"><button type="button" class="msgBtn back">Back</button></a>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
