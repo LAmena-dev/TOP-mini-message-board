@@ -1,3 +1,6 @@
+// import dotenv from "dotenv";
+// dotenv.config();
+import "dotenv/config";
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -16,10 +19,11 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, (error) => {
   if (error) {
     throw error;
   }
   console.log(`My first Express app - listening on port ${PORT}!`);
+  console.log(process.env.DATABASE_URL);
 });

@@ -41,14 +41,15 @@
                             <li class="msgBody">
                                 <p class="msgTop">
                                     <strong>
-                                        <%= message.user %>:
+                                        <%= message.username %>:
                                     </strong>
+                                </p>
                                 <p class="text">
-                                    <%= message.text %>
+                                    <%= message.message %>
                                 </p>
-                                </p>
+
                                 <div class="msgBot">
-                                    <em>(<%= message.added.toLocaleString() %>)</em>
+                                    <em>(<%= new Date(message.add_date).toLocaleString() %>)</em>
                                     <a href="/messages/<%= message.id %>"><button type="button"
                                             class="msgBtn">Open</button></a>
                                 </div>
