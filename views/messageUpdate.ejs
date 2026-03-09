@@ -23,11 +23,11 @@
             <div class="containerHead">
                 <h2>Add a new Message</h2>
             </div>
-            <form action="/new" method="POST" class="msgBody" >
+            <form action="/<%= message.id %>/update" method="POST" class="msgBody">
                 <strong><label for="username">Name:</label></strong>
-                <input type="text" id="username" name="msgUser" required><br><br>
+                <input type="text" id="username" name="msgUser" value="<%= message.username %>" required><br><br>
                 <strong><label for="text">Message:</label></strong>
-                <textarea id="text" name="msgText" required></textarea><br><br>
+                <textarea id="text" name="msgText" required><%= message.message %></textarea><br><br>
                 <div class="formBtns">
                     <button type="submit" class="msgBtn postBtn">Post Message</button>
                     <a href="/"><button type="button" class="msgBtn back">Back</button></a>
