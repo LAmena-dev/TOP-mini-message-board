@@ -6,10 +6,11 @@ async function selectMessages() {
 }
 
 async function insertMessage(username, message) {
-  await pool.query("INSERT INTO messages (username, message) VALUES ($1, $2)", [
-    username,
-    message,
-  ]);
+  const result = await pool.query(
+    "INSERT INTO messages (username, message) VALUES ($1, $2)",
+    [username, message],
+  );
+  return result.rows[0];
 }
 
 async function selectMessage(id) {
@@ -20,15 +21,16 @@ async function selectMessage(id) {
 }
 
 async function updateMessage(id, username, message) {
-  await pool.query(
-    "UPDATE messages SET username = $1, message = $2 WHERE id = $3",
+  const result = await pool.query(
+    "UPDATE messages SET username = $1, message = $2 WHERE id = $3 RETURNING *",
     [username, message, id],
   );
+  return result.rows[0];
 }
 
 async function deleteMessage(id) {
-  const row = await pool.query("DELETE FROM messages WHERE id = $1", [id]);
-  return row;
+  const result = await pool.query("DELETE FROM messages WHERE id = $1", [id]);
+  return result;
 }
 
 export {

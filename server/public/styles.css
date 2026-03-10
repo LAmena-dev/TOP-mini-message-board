@@ -1,0 +1,277 @@
+:root {
+  --border-color: rgb(0, 0, 0);
+  --title-color: rgb(255, 255, 255);
+  --bg-color: rgb(128, 128, 128);
+  --container-color: rgb(255, 255, 255);
+}
+
+* {
+  font-family: "Lucida Sans", Arial, sans-serif;
+}
+
+body,
+html {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  gap: 16px;
+  background-color: var(--container-color);
+  border-bottom: 8px solid var(--border-color);
+  padding: 8px 16px;
+}
+
+nav > div {
+  display: flex;
+  gap: 24px;
+}
+
+nav > div a,
+nav > div button {
+  flex-shrink: 0;
+  min-width: max-content;
+}
+
+.siteTitle {
+  flex-shrink: 0;
+  min-width: max-content;
+  text-align: center;
+  text-decoration: none;
+  color: var(--title-color);
+  background-color: hsla(0, 0%, 0%, 1);
+  border-radius: 25px;
+  padding: 4px 24px;
+  margin: 4px 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  flex-grow: 1;
+  background-color: var(--bg-color);
+  padding: 36px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--container-color);
+  border: 8px solid var(--border-color);
+  box-sizing: border-box;
+  box-shadow: 8px 16px hsla(0, 0%, 0%, 0.75);
+  width: fit-content;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.containerHead {
+  display: flex;
+  justify-content: center;
+  border-bottom: 8px solid var(--border-color);
+  padding: 0 36px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.msgBody {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 16px 36px;
+  flex: 1;
+}
+
+li:not(:last-child) {
+  border-bottom: 2px solid var(--border-color);
+}
+
+button {
+  cursor: pointer;
+  /* padding: 8px 16px; */
+}
+
+h1 {
+  font-size: clamp(1rem, 5vw, 2rem);
+  margin: 8px 0;
+}
+
+h2 {
+  font-size: clamp(1rem, 4vw, 2rem);
+  margin: 16px 0;
+}
+
+.msgTop {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin: 8px 0;
+}
+
+.text {
+  font-family: "Courier New", Courier, monospace;
+  margin: 0 24px 16px;
+}
+
+em {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.msgTop,
+.text,
+em {
+  font-size: clamp(0.5rem, 2.5vw, 1.25rem);
+}
+
+.msgBot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border-color);
+  gap: 16px;
+}
+
+.msgBtn {
+  font-weight: bold;
+  /* padding: 8px 48px; */
+  margin-top: 16px;
+}
+
+.postBtn {
+  flex: 1;
+  width: 100%;
+}
+
+button,
+.msgBtn,
+.postBtn {
+  font-size: clamp(0.5rem, 2.5vw, 1.25rem);
+  padding: clamp(6px, 1vw, 16px) clamp(12px, 2vw, 48px);
+}
+
+label {
+  font-size: 1.25rem;
+}
+
+input,
+textarea {
+  font-size: 1rem;
+  margin: 16px 0;
+}
+
+textarea {
+  flex: 1;
+}
+
+input {
+  font-weight: bold;
+  height: 2rem;
+}
+
+.msgDeats {
+  flex: 1;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.formBtns {
+  display: flex;
+  justify-content: end;
+  gap: 50px;
+}
+
+.back {
+  padding: 8px 80px;
+}
+
+.emptyState {
+  text-align: center;
+}
+
+.emptyText {
+  font-family: "Courier New", Courier, monospace;
+  font-size: clamp(1rem, 5vw, 2rem);
+  margin: 8px;
+}
+
+.emptyState a {
+  display: block;
+  width: 100%;
+}
+
+.container,
+.text,
+.msgTop,
+em {
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 800px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav > div {
+    margin-top: 8px;
+  }
+
+  .msgBody {
+    padding: 12px 16px;
+  }
+
+  .text {
+    margin: 0 0 12px 0;
+  }
+
+  .container {
+    min-width: 100px;
+  }
+
+  .msgBtn,
+  .postBtn {
+    width: 100%;
+  }
+
+  .msgBot {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .msgBot em {
+    margin-top: 16px;
+  }
+
+  .msgBot button {
+    width: 100%;
+  }
+}
