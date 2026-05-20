@@ -1,2 +1,2 @@
 # TOP-mini-message-board
-A TOP practice repository using Express and EJS
+A [mini-message-board](https://www.theodinproject.com/lessons/node-path-nodejs-mini-message-board) using Express and EJS
